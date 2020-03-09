@@ -1,7 +1,5 @@
 version 0.2
-
 run-as: root
-
 phases:
   install:
      runtime-versions: 
@@ -10,8 +8,7 @@ phases:
        - echo "Java project build is in install phase"
        - echo "installing open JDK
        - sudo yum -y install java-1.8.0-openjdk-devel
-       - sudo yum -y install java-1.8.0-openjdk
-  
+       - sudo yum -y install java-1.8.0-openjdk 
   build:
     commands:
        - echo "build phase started...compiling java project
@@ -19,6 +16,8 @@ phases:
        - echo "Executing java project
        - sudo java Simple
 artifacts:
-  base-directory: https://s3.console.aws.amazon.com/s3/buckets/myapp-java-artifacts/
-   files:
-       - src1
+  secondary-artifacts:
+    artifact1:
+       base-directory: https://s3.console.aws.amazon.com/s3/buckets/myapp-java-artifacts/
+       files:
+          - Simple.class
