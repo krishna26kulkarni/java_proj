@@ -22,5 +22,6 @@ phases:
        - echo "Executing java project"
        - java Simple
   post_build:
-    commnds:
+    commands:
+       - echo "entering post build phase"
        - echo `aws s3 ls --region us-east-1`
