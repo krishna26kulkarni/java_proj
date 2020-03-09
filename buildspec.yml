@@ -7,14 +7,14 @@ phases:
      commands:
        - echo "Java project build is in install phase"
        - echo "installing open JDK"
-       - sudo yum -y install java-1.8.0-openjdk-devel
-       - sudo yum -y install java-1.8.0-openjdk 
+       - yum -y install java-1.8.0-openjdk-devel
+       - yum -y install java-1.8.0-openjdk 
   build:
     commands:
        - echo "build phase started...compiling java project"
        - sudo javac Simple.java
        - echo "Executing java project"
-       - sudo java Simple
+       - java Simple
 artifacts:
   secondary-artifacts:
     artifact1:
