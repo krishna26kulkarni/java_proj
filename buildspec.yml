@@ -19,5 +19,6 @@ phases:
        - echo "Executing java project
        - sudo java Simple
 artifacts:
+  base-directory: https://s3.console.aws.amazon.com/s3/buckets/myapp-java-artifacts/
    files:
-       - https://s3.console.aws.amazon.com/s3/buckets/myapp-java-artifacts/
+       - src1
