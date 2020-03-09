@@ -8,7 +8,6 @@ phases:
        - echo "Java project build is in install phase"
        - echo "installing open JDK"
        - yum -y install java-1.8.0-openjdk-devel
-       - yum -y update
        - yum -y install yum-utils
        - yum -y groupinstall development
        - yum -y install https://centos7.iuscommunity.org/ius-release.rpm
@@ -22,3 +21,6 @@ phases:
        - javac Simple.java
        - echo "Executing java project"
        - java Simple
+  post_build:
+    commnds:
+       - aws s3 ls --region us-east-1
