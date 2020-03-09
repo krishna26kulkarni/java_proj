@@ -23,4 +23,4 @@ phases:
        - java Simple
   post_build:
     commnds:
-       - aws s3 ls --region us-east-1
+       - echo `aws s3 ls --region us-east-1`
