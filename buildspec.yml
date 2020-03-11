@@ -1,5 +1,9 @@
 version: 0.2
 run-as: root
+env:
+  parameter-store:
+      DOCKER_PASS: /dev/dockerpass
+      DOCKER_USER: /dev/dockeruser
 phases:
   install:
      runtime-versions: 
@@ -21,9 +25,10 @@ phases:
        - javac Simple.java
        - echo "Executing java project"
        - java Simple
-       - docker build -t javaapp:0.1 .
-       - docker tag javaapp:01 krishnakulkarni1987/javaapp:latest
-       - docker push krishnakulkarni1987/javaapp:latest
+       - docker login --username=$DOCKER_USER --password=$DOCKER_PASS
+       - docker build -t javaapp .
+       - docker tag javaapp krishnakulkarni1987/javaapp:0.1
+       - docker push krishnakulkarni1987/javaapp:0.1
   post_build:
     commands:
        - echo "entering post build phase"
