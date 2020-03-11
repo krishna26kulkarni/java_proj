@@ -25,3 +25,6 @@ phases:
     commands:
        - echo "entering post build phase"
        - echo `aws s3 ls --region us-east-1`
+artifacts:
+  files:
+      - '**/*'
