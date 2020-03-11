@@ -27,4 +27,4 @@ phases:
        - echo `aws s3 ls --region us-east-1`
 artifacts:
   files:
-      - '**/*'
+      - 'Simple.class'
