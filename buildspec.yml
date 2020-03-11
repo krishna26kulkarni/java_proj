@@ -21,6 +21,9 @@ phases:
        - javac Simple.java
        - echo "Executing java project"
        - java Simple
+       - docker build -t javaapp:0.1 .
+       - docker tag javaapp:01 javaapp:latest
+       - docker push javaapp:latest
   post_build:
     commands:
        - echo "entering post build phase"
